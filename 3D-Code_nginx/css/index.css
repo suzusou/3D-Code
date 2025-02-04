@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* bodyで画像などの位置をしているため、
+ナビゲーションバーの位置が一番上に指定できない */
+body {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    /* padding-top: 60px; */
+    overflow: hidden; 
+}
+
+#header {
+    width: fit-content; 
+    padding: 15px 0 10px 5vw;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-decoration: none;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: none;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.center-image {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    margin-bottom: 20px;
+    /*border-radius: 10px;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5); /* 柔らかいフォーカス効果 */
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: none;
+    width: 100%;
+    height: 10vh;
+}
+
+ul {
+    width: 30vw;
+    margin-left: 60vw;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    gap: 3vw;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.nav-list a:active {
+    color: black; /* クリック時の文字色 */
+}
+
+@media screen and (max-width: 600px) {
+    
+    #header {
+        font-size: 5vw;
+        padding-top: 5.5%;
+    }
+
+    nav {
+        height: 8vh;
+        /* padding: 0.5%; */
+    }
+
+    ul {
+        margin-left: 25vw;
+    }
+
+    .nav-list {
+        padding-top: 6%;
+        padding-bottom: 4.5%;
+    }
+
+    .nav-list a {
+        font-size: 4vw;
+    }
+
+    .container {
+        width: 100%;
+        padding-bottom: 15vh;
+    }
+
+    .center-image {
+        width: 100%;
+    }
+    
+    .button {
+        font-size: 20px;
+        text-decoration: none;  
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    #header {
+        font-size: 5vw;
+        padding-top: 4.5%;
+        margin-left: 1.5%;
+    }
+
+    nav {
+        height: 10vh;
+    }
+
+    ul {
+        margin-left: 40vw;
+    }
+
+    .nav-list {
+        padding-top: 3%;
+    }
+
+    .nav-list a {
+        font-size: 3.5vw;
+    }
+
+    .container {
+        width: 100%;
+        padding-bottom: 15vh;
+    }
+
+    .center-image {
+        width: 100%;
+    }
+
+    .button {
+        font-size: 20px;
+    }
+}

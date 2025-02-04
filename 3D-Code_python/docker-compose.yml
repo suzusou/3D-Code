@@ -1,0 +1,10 @@
+services:
+  fastapi:
+    container_name: 3D-api
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - DIRECTORY_PATH
+    ports:
+      - "xxxx:xxxx"

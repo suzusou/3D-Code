@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+    /* padding-top: 10px; */
+    overflow: hidden;
+}
+
+#header {
+    width: fit-content; 
+    padding: 15px 0 10px 5vw;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: none;
+    width: 100%;
+    height: 10vh;
+}
+
+h4 {
+    font-size: 2vw;
+    color: black;
+    margin-right: 20px;
+}
+
+ul {
+    width: 30vw;
+    margin-left: 60vw;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    gap: 3vw;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+.nav-list a:active {
+    color: black; /* クリック時の文字色 */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10vh;
+}
+
+.camera-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 90%;
+    width: 80vw;
+}
+
+#camera {
+    position: relative;
+    width: 25vw; /* カメラの横幅 */
+    max-width: 80vw; /* 最大幅 */
+    height: 50vh; /* カメラの高さ */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-frame {
+    position: absolute;
+    width: 80%; /* カメラの横幅の80%に設定 */
+    aspect-ratio: 1 / 1; /* 高さと幅を同じに設定 */
+    border: 3px solid green; /* 緑色の枠 */
+    box-sizing: border-box;
+    pointer-events: none; /* 枠がクリックを妨げないように設定 */
+}
+
+.frame-text {
+    position: absolute;
+    top: 5%; /* 枠の上端からの距離を調整 */
+    left: 5%; /* 枠の左端からの距離を調整 */
+    color: green; /* テキストの色 */
+    font-size: 14px; /* テキストのサイズ */
+    font-weight: bold; /* テキストを太字に設定 */
+    background-color: rgba(255, 255, 255, 0.7); /* テキストの背景を半透明に */
+    padding: 2px 5px; /* テキストの内側余白を調整 */
+    border-radius: 3px; /* テキスト背景の角を丸くする */
+    pointer-events: none; /* テキストがクリックを妨げないように設定 */
+}
+
+
+#camera video{
+    width: 50vw;
+    max-width: 80vw;
+    height: 50vh;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+#btn_capture {
+    width: 20vw;
+    padding: 10px;
+    margin: 20px;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+#btn_capture:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5);
+}
+
+#btn_capture:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+#text_result {
+    margin: 15px;
+    font-size: large;
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+#btn_camera {
+    width: 20vw;
+    padding: 10px;
+    margin-top: 3vh;
+    margin-bottom: 1.5vh;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    border: 0.25rem solid rgba(255, 255, 255, 0.2);
+    border-top-color: rgb(255, 255, 255);
+    animation: spin 1s infinite linear;
+}
+
+#btn_camera:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 239, 128, 0.5);
+}
+
+#btn_camera:hover {
+    background: linear-gradient(135deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* スマホ用レスポンシブデザイン */
+@media screen and (max-width: 600px) {
+    #header {
+        font-size: 5vw;
+        padding-top: 5.5%;
+    }
+
+    nav {
+        height: 8vh;
+    }
+
+    ul {
+        margin-left: 25vw;
+    }
+
+    .nav-list {
+        padding-top: 6%;
+        padding-bottom: 4.5%;
+    }
+
+    .nav-list a {
+        font-size: 4vw;
+    }
+
+    #camera video{
+        width: 100vw;
+    }
+
+    #btn_camera {
+        width: 80vw;
+    }
+
+    #btn_capture {
+        width: 80vw;
+    }
+
+    #camera {
+        width: 80vw; /* カメラの横幅 */
+    }
+
+    
+    #camera video{
+        width: 80vw;
+    }
+
+    #text_result {
+        font-size: 4.5vw;
+    }
+
+}
+
+/* タブレット用レスポンシブデザイン */
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    #header {
+        font-size: 5vw;
+        padding-top: 4.5%;
+        margin-left: 1.5%;
+    }
+
+    nav {
+        height: 10vh;
+    }
+
+    ul {
+        margin-left: 40vw;
+    }
+
+    .nav-list {
+        padding-top: 3%;
+    }
+
+    .nav-list a {
+        font-size: 3.5vw;
+    }
+
+    #camera video{
+        width: 100vw;
+    }
+
+    #btn_camera {
+        width: 50vw;
+        font-size: 4vw;
+    }
+
+    #btn_capture {
+        width: 50vw;
+        font-size: 4vw;
+    }
+
+    #camera {
+        width: 50vw; /* カメラの横幅 */
+    }
+    
+    #camera video{
+        width: 80vw;
+    }
+
+    #text_result {
+        font-size: 3.5vw;
+    }
+}

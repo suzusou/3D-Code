@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!-- 文字コードを指定 -->
+  <meta charset="UTF-8">
+  <!-- 端末やブラウザごとに異なる画面幅を指定するのに使用 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Code</title>
+  <link rel="stylesheet" href="./css/write.css">
+</head>
+
+<body>
+  <!-- <<a href="./index.html"><header class="header">3D Code</header></a> -->
+  <nav>
+    <div><a href="./index.html" id="header">3D-Code</a></div>
+    <ul class="nav-list">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./write.html">Write</a></li>
+      <li><a href="./read.html">Read</a></li>
+    </ul>
+  </nav>
+  <main class="main-content">
+    <div class="input-container">
+        <!-- コードを作成するのに使用する文字の入力場所 -->
+        <input type="text" class="input-field" placeholder="入力してください">
+        <!-- コード生成ボタン -->
+        <button id="btn_generate" class="btn_generate">Generate</button>
+    </div>
+
+    <!-- 生成したコードの画像の表示場所 -->
+    <div class="loader-container">
+      <div class="loader"></div>
+      <!-- 画像 -->
+      <div id="image"></div>
+    </div>
+
+    <!-- <a href="index.html" id="btn_home">Home</a> -->
+    <button id="btn_download">Download</button>
+  </main>
+  <script src="./js/write.js"></script>
+</body>
+
+</html>
